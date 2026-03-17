@@ -1,57 +1,244 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy – Calisthenics Tracker</title>
+<title>Privacy Policy — Calisthenics Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #0a0a0a; --card: #141414; --text: #e0e0e0; --muted: #888; --accent: #4fc3f7; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem 1.25rem; max-width: 720px; margin: 0 auto; }
-  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; color: #fff; }
-  .date { color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
-  h2 { font-size: 1.15rem; color: var(--accent); margin: 1.75rem 0 0.5rem; }
-  p { margin-bottom: 0.75rem; }
-  a { color: var(--accent); }
-  .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #222; color: var(--muted); font-size: 0.8rem; }
+  :root {
+    --bg:              #0D0E10;
+    --surface:         #161719;
+    --surface-alt:     #1D1E21;
+    --text:            #F0F0EC;
+    --text-secondary:  #9A9B9F;
+    --text-muted:      #5C5D61;
+    --border:          #2A2B2F;
+    --accent:          #10B981;
+    --accent-subtle:   #0D2419;
+    --accent-fg:       #0D0E10;
+
+    --font-display:    'Barlow Condensed', sans-serif;
+    --font-body:       'DM Sans', sans-serif;
+    --font-mono:       'IBM Plex Mono', monospace;
+
+    --radius-md:       6px;
+    --radius-lg:       8px;
+    --max-width:       720px;
+    --gutter:          clamp(24px, 5vw, 80px);
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  /* ── Header bar ── */
+  .nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  .nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-brand {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .nav-back {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .nav-back:hover { opacity: 0.8; }
+
+  /* ── Content ── */
+  .content {
+    padding: 80px 0 120px;
+  }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .content h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .effective {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: -0.01em;
+    margin-bottom: 48px;
+  }
+
+  .content h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text);
+    letter-spacing: 0.02em;
+    margin-top: 40px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .content p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+  .content strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .content a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .content a:hover { text-decoration: underline; }
+
+  .service-list {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin: 16px 0 12px;
+  }
+  .service-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-name {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .service-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  @media (max-width: 768px) {
+    .content { padding: 60px 0 80px; }
+    .service-item { flex-direction: column; gap: 2px; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
-<p class="date">Effective: March 17, 2026</p>
+<!-- ── NAV ── -->
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-brand">Calisthenics Tracker</a>
+    <a href="index.html" class="nav-back">&larr; Back</a>
+  </div>
+</nav>
 
-<p>Calisthenics Tracker ("we", "the app") is developed by Felix as an independent project. This policy explains how data is handled when you use the app.</p>
+<!-- ── CONTENT ── -->
+<main class="content">
+  <div class="container">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="effective">Effective: 2026-03-17</p>
 
-<h2>1. Data We Collect</h2>
-<p>The app stores your workout data (exercises, sets, reps, hold times, bodyweight, notes) locally on your device. If you create an account, your email address is collected for authentication purposes only.</p>
+    <p>Calisthenics Tracker ("we", "the app") is developed by Felix as an independent project. This policy explains how your data is handled.</p>
 
-<h2>2. Data Storage</h2>
-<p>All training data is stored on-device by default. If cloud sync is enabled in a future update, data will be stored on secured servers and you will be notified before any sync occurs.</p>
+    <h2>1. Data We Collect</h2>
+    <p>The app stores your workout data — exercises, sets, reps, hold times, bodyweight, and notes — locally on your device. If you create an account, your email address is collected for authentication purposes only.</p>
 
-<h2>3. Third-Party Services</h2>
-<p>The app may use the following third-party services:</p>
-<p>• <strong>Apple HealthKit</strong> – only if you explicitly grant permission. We read/write workout data; this data is never sent to external servers.<br>
-• <strong>RevenueCat</strong> – for managing in-app purchases. RevenueCat's own privacy policy applies.<br>
-• <strong>Expo / EAS</strong> – for app updates. Anonymous device metadata may be collected for crash reporting.</p>
+    <h2>2. Data Storage</h2>
+    <p>All training data is stored on-device by default. If cloud sync is enabled in a future update, data will be stored on secured servers and you will be notified before any sync occurs.</p>
 
-<h2>4. Analytics</h2>
-<p>We do not use third-party analytics or ad tracking. No personal data is sold or shared with advertisers.</p>
+    <h2>3. Third-Party Services</h2>
+    <p>The app may use the following services:</p>
+    <div class="service-list">
+      <div class="service-item">
+        <span class="service-name">HealthKit</span>
+        <span class="service-desc">Only if you explicitly grant permission. Workout data read/written locally — never sent to external servers.</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">RevenueCat</span>
+        <span class="service-desc">Manages in-app purchases. Their own privacy policy applies.</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Expo / EAS</span>
+        <span class="service-desc">Handles app updates. Anonymous device metadata may be collected for crash reporting.</span>
+      </div>
+    </div>
 
-<h2>5. Data Deletion</h2>
-<p>You can delete all your data at any time by removing your account in the app settings or by uninstalling the app. To request manual deletion, contact us at the email below.</p>
+    <h2>4. Analytics</h2>
+    <p>We do not use third-party analytics or ad tracking. No personal data is sold or shared with advertisers.</p>
 
-<h2>6. Children's Privacy</h2>
-<p>The app is not directed at children under 13. We do not knowingly collect data from children.</p>
+    <h2>5. Data Deletion</h2>
+    <p>You can delete all data at any time by removing your account in Settings or by uninstalling the app. For manual deletion, contact us at the email below.</p>
 
-<h2>7. Changes</h2>
-<p>We may update this policy. Changes will be posted on this page with a revised effective date.</p>
+    <h2>6. Children's Privacy</h2>
+    <p>The app is not directed at children under 13. We do not knowingly collect data from children.</p>
 
-<h2>8. Contact</h2>
-<p>Questions? Reach out at <a href="mailto:f_niedermann@icloud.comh">f_niedermann@icloud.com</a></p>
+    <h2>7. Changes</h2>
+    <p>We may update this policy. Changes will be posted here with a revised effective date.</p>
 
-<div class="footer">&copy; 2026 Calisthenics Tracker</div>
+    <h2>8. Contact</h2>
+    <p>Questions? Reach out at <a href="mailto:f_niedermann@icloud.com">f_niedermann@icloud.com</a></p>
+  </div>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">&copy; 2026 Calisthenics Tracker</div>
+</footer>
 
 </body>
 </html>
